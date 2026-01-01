@@ -16,8 +16,8 @@ export const PERSONAL_INFO = {
   phone: '+91 8760964830',
   github: 'https://github.com/Tharun4743',
   linkedin: 'https://www.linkedin.com/in/tharunkumark4743/',
-  leetcode: 'https://leetcode.com/u/Tharunkumar_K/',
-  geeksforgeeks: 'https://auth.geeksforgeeks.org/user/Tharunkumar_K/', // adjust if different
+  leetcode: 'https://leetcode.com/u/Tharunkumar__K/',
+  geeksforgeeks: 'https://www.geeksforgeeks.org/profile/tharunkumark4743', // adjust if different
   profileImage,    // hero image
   profileImageAlt, // about section image
   profileSummary:
@@ -116,3 +116,4 @@ export const SOFT_SKILLS = [
 ];
 
 export const HOBBIES = ['Photography', 'Video Editing', 'Designing'];
+
