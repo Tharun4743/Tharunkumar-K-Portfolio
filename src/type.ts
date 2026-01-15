@@ -22,3 +22,11 @@ export type CertificationItem = {
   issuer: string;
   year: string;
 };
+
+// NEW: Internship type
+export type InternshipItem = {
+  title: string;
+  period: string;
+  company: string;
+  description: string;
+};
