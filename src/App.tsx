@@ -533,6 +533,39 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Internships */}
+<section id="internships" className="py-32 bg-slate-50/50">
+  <div className="container mx-auto px-6">
+    <SectionHeader
+      title="Internships"
+      subtitle="Industry experiences and virtual programs I've completed."
+      icon={<User size={28} />}
+    />
+    <div className="grid lg:grid-cols-2 gap-12">
+      {INTERNSHIPS.map((internship, idx) => (
+        <motion.div
+          key={internship.title}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.05 }}
+          className="group bg-slate-50 rounded-[3.5rem] overflow-hidden flex flex-col border border-slate-100 hover:border-blue-400 transition-all hover:shadow-3xl p-12"
+        >
+          <h3 className="text-3xl font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tighter mb-4">
+            {internship.title}
+          </h3>
+          <p className="text-sm font-bold text-blue-600 mb-2">
+            {internship.company} | {internship.period}
+          </p>
+          <p className="text-slate-600 leading-relaxed text-xl font-medium">
+            {internship.description}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Certifications */}
       <section id="certs" className="py-32 bg-slate-50/50">
