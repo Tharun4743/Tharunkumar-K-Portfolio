@@ -23,6 +23,7 @@ import {
   TECHNICAL_SKILLS,
   CERTIFICATIONS,
   PROJECTS,
+  INTERNSHIPS,
   SOFT_SKILLS,
   HOBBIES
 } from './constants';
