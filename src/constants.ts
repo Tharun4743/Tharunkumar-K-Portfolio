@@ -5,8 +5,9 @@ import type {
   Project,
   SkillCategory,
   EducationItem,
-  CertificationItem
-} from './types';
+  CertificationItem,
+  InternshipItem
+} from './types';    
 
 // PERSONAL INFO FROM RESUME
 export const PERSONAL_INFO = {
@@ -106,6 +107,16 @@ export const PROJECTS: Project[] = [
   }
 ];
 
+export const INTERNSHIPS: InternshipItem[] = [
+  {
+    title: 'Infosys Springboard Virtual Internship 6.0',
+    period: '2025',
+    company: 'Infosys',
+    description:
+      'Completed a project-based virtual internship where I developed "BragBoard", an employee recognition web platform. Users can create posts recognizing achievements, upvote, comment, and view leaderboards. Gained hands-on experience in full-stack development, teamwork, and project delivery.'
+  }
+];
+
 export const SOFT_SKILLS = [
   'Problem Solving',
   'Communication',
@@ -116,4 +127,3 @@ export const SOFT_SKILLS = [
 ];
 
 export const HOBBIES = ['Photography', 'Video Editing', 'Designing'];
-
