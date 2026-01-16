@@ -1,129 +1,73 @@
-import profileImage from './assets/profile.png';
-import profileImageAlt from './assets/profile2.png';
+import { Project, Certification, SkillCategory } from './types';
 
-import type {
-  Project,
-  SkillCategory,
-  EducationItem,
-  CertificationItem,
-  InternshipItem
-} from './types';    
+ // ✅ IMPORT IMAGE
 
-// PERSONAL INFO FROM RESUME
 export const PERSONAL_INFO = {
   name: 'Tharunkumar K',
-  location: 'Dharapuram, Tamil Nadu, India',
   email: 'tharunkumark42007@gmail.com',
   phone: '+91 8760964830',
-  github: 'https://github.com/Tharun4743',
+  location: 'Dharapuram, Tamil Nadu',
   linkedin: 'https://www.linkedin.com/in/tharunkumark4743/',
+  github: 'https://github.com/Tharun4743',
   leetcode: 'https://leetcode.com/u/Tharunkumar__K/',
-  geeksforgeeks: 'https://www.geeksforgeeks.org/profile/tharunkumark4743', // adjust if different
-  profileImage,    // hero image
-  profileImageAlt, // about section image
+  geeksforgeeks: 'https://www.geeksforgeeks.org/profile/tharunkumark42007',
   profileSummary:
-    'Information Technology undergraduate passionate about innovation and technology, with strong skills in Java, AI, Data Structures, and Web Development. Experienced in AI and IoT projects, problem-solving, and debugging, focused on building scalable real-world solutions.'
+    'Information Technology undergraduate passionate about innovation and technology, with strong skills in Java, AI, Data Structures, and Web Development. Experienced in AI and IoT projects, problem-solving, and debugging, and motivated to build scalable real-world solutions while contributing to meaningful product development.'
 };
 
-export const EDUCATION: EducationItem[] = [
+export const EDUCATION = [
   {
     institution: 'VSB Engineering College, Karur',
-    degree: 'B.Tech Information Technology',
-    period: '2024 – 2028',
-    details: [
-      'Current Year: 2nd Year with CGPA 8.5/10.',
-      'Focusing on software engineering, AI, data structures, and web development.'
-    ]
+    degree: 'Bachelor of Technology - Information Technology',
+    period: '2024 - 2028',
+    details: 'Current Year: 2nd Year | CGPA: 8.5 / 10'
   },
   {
-    institution: 'Sindhu Matriculation Higher Secondary School, Dharapuram',
-    degree: 'Higher Secondary (State Board, Tamil Nadu)',
-    period: '2023 – 2024',
-    details: ['Scored 84.66% in Higher Secondary education.']
+    institution: 'Sindhu Matriculation Higher Secondary School',
+    degree: 'Higher Secondary',
+    period: '2023 - 2024',
+    details: 'Score: 84.66% | Board: State Board of Tamil Nadu'
   }
 ];
 
 export const TECHNICAL_SKILLS: SkillCategory[] = [
-  {
-    name: 'Frontend',
-    skills: ['React', 'HTML', 'CSS', 'JavaScript']
-  },
-  {
-    name: 'Backend',
-    skills: ['Python', 'Node.js']
-  },
-  {
-    name: 'Database',
-    skills: ['MySQL']
-  },
-  {
-    name: 'Other',
-    skills: ['Java', 'C', 'C++ (Basic)', 'Data Structures & Algorithms']
-  }
+  { name: 'Frontend', skills: ['React', 'HTML', 'CSS', 'JavaScript'] },
+  { name: 'Backend', skills: ['Python', 'Node.js'] },
+  { name: 'Languages', skills: ['Java', 'C', 'C++ (Basic)'] },
+  { name: 'Database', skills: ['MySQL'] }
 ];
 
-export const CERTIFICATIONS: CertificationItem[] = [
-  {
-    name: 'Introduction to AWS Inferentia and Amazon EC2 Inf1 Instances',
-    issuer: 'AWS / Simplilearn (SkillUp)',
-    year: '2025'
-  },
-  {
-    name: 'TCS ION Career Edge Young Professional',
-    issuer: 'TCS ION',
-    year: '2025'
-  },
-  {
-    name: 'Salesforce Administrator Explorer',
-    issuer: 'FutureSkills PRIME',
-    year: '2025'
-  },
-  {
-    name: 'Python Foundation',
-    issuer: 'Infosys Springboard',
-    year: '2025'
-  },
-  {
-    name: 'Python Course for Beginners',
-    issuer: 'Scaler',
-    year: '2025'
-  }
+export const CERTIFICATIONS: Certification[] = [
+  { title: 'Introduction to AWS Inferentia and Amazon EC2 Inf1 Instances', issuer: 'Simplilearn (SkillUp) | AWS' },
+  { title: 'TCS iON Career Edge Young Professional', issuer: 'TCS iON (Tata Consultancy Services)' },
+  { title: 'Salesforce Administrator Explorer', issuer: 'FutureSkills PRIME' },
+  { title: 'Python Foundation', issuer: 'Infosys Springboard' },
+  { title: 'Python Course for Beginners', issuer: 'Scaler' }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: 'VSBEC Study Material Portal',
-    description:
-      'A web portal for students to access study materials and notes built using HTML, CSS, and JavaScript, improving ease of access to resources.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://vsbec.unaux.com'
+    title: 'Smart Helmet & IoT Safety System',
+    description: 'IoT-based rider safety system with helmet detection and alcohol sensing capabilities.',
+    date: 'Nov 2025 — Jan 2026',
+    link: '#',
+    tags: ['IoT', 'Embedded Systems', 'Safety']
   },
   {
-    title: 'Smart Helmet & IoT Safety System',
-    description:
-      'IoT-based rider safety system featuring helmet detection and alcohol sensing to prevent unsafe riding conditions.',
-    tags: ['IoT', 'Embedded Systems', 'Sensors'],
-    link: '#' // replace with prototype link when available
-  }
-];
-
-export const INTERNSHIPS: InternshipItem[] = [
-  {
-    title: 'Infosys Springboard Virtual Internship 6.0',
-    period: '2025',
-    company: 'Infosys',
-    description:
-      'Completed a project-based virtual internship where I developed "BragBoard", an employee recognition web platform. Users can create posts recognizing achievements, upvote, comment, and view leaderboards. Gained hands-on experience in full-stack development, teamwork, and project delivery.'
+    title: 'VSBEC Study Material Portal',
+    description: 'A web portal designed for students to access study notes easily.',
+    link: 'https://vsbec.unaux.com',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Web Dev']
   }
 ];
 
 export const SOFT_SKILLS = [
   'Problem Solving',
   'Communication',
-  'Team Leadership',
-  'Adaptability',
   'Figma',
-  'DSA'
+  'Team Lead',
+  'Adaptability'
 ];
 
 export const HOBBIES = ['Photography', 'Video Editing', 'Designing'];
+
