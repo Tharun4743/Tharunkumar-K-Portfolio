@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   location: 'Dharapuram, Tamil Nadu',
   linkedin: 'https://www.linkedin.com/in/tharunkumark4743/',
   github: 'https://github.com/Tharun4743',
-  leetcode: 'https://leetcode.com/u/Tharunkumar__K/',
+  leetcode: 'https://leetcode.com/u/Tharunkumar_K/',
   geeksforgeeks: 'https://www.geeksforgeeks.org/profile/tharunkumark42007',
   profileSummary:
     'Information Technology undergraduate passionate about innovation and technology, with strong skills in Java, AI, Data Structures, and Web Development. Experienced in AI and IoT projects, problem-solving, and debugging, and motivated to build scalable real-world solutions while contributing to meaningful product development.'
@@ -70,4 +70,5 @@ export const SOFT_SKILLS = [
 ];
 
 export const HOBBIES = ['Photography', 'Video Editing', 'Designing'];
+
 
