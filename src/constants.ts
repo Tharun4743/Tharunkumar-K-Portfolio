@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   location: 'Dharapuram, Tamil Nadu',
   linkedin: 'https://www.linkedin.com/in/tharunkumark4743/',
   github: 'https://github.com/Tharun4743',
-  leetcode: 'https://leetcode.com/u/Tharunkumar_K/',
+  leetcode: 'https://leetcode.com/u/Tharunkumar__K/',
   geeksforgeeks: 'https://www.geeksforgeeks.org/profile/tharunkumark42007',
   profileImage: profileImg,  // ✅ Uses your local profile.png
   profileSummary:
