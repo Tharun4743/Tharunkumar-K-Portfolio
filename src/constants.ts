@@ -5,7 +5,7 @@ import profileImg from './assets/profile.png';
 
 export const PERSONAL_INFO = {
   name: 'Tharunkumar K',
-  profileImage: profileImg, // ✅ ADDED (THIS FIXES IMAGE ISSUE)
+  profileImage: profile.png // ✅ ADDED (THIS FIXES IMAGE ISSUE)
   email: 'tharunkumark42007@gmail.com',
   phone: '+91 8760964830',
   location: 'Dharapuram, Tamil Nadu',
