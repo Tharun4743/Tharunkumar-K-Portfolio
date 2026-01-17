@@ -76,7 +76,7 @@ const Nav: React.FC = () => {
           className="text-2xl font-black tracking-tighter text-blue-600 hover:scale-105 transition-transform flex items-center gap-2"
         >
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">TK</div>
-          <span>Tharun<span className="text-slate-400">.</span></span>
+          <span>Tharunkumar<span className="text-slate-400">.</span></span>
         </a>
         
         <div className="hidden md:flex items-center space-x-2">
@@ -288,8 +288,9 @@ const App: React.FC = () => {
               <div className="relative aspect-square max-w-[440px] mx-auto">
                 <div className="absolute inset-0 bg-blue-600 rounded-[3.5rem] rotate-6 scale-95 opacity-5"></div>
                 <div className="absolute inset-0 bg-blue-600 rounded-[3.5rem] -rotate-3 scale-95 opacity-5"></div>
+                
                 <img 
-                  src={PERSONAL_INFO.profileImage} 
+                  src={PERSONAL_INFO.profileImage2} 
                   alt="Tharunkumar Portrait"
                   className="relative z-10 w-full h-full object-cover object-top rounded-[3.5rem] shadow-2xl border-[6px] border-white"
                   onError={(e) => {
