@@ -1,9 +1,11 @@
 import { Project, Certification, SkillCategory } from './types';
 
- // ✅ IMPORT IMAGE
+// ✅ IMPORT IMAGE CORRECTLY
+import profileImg from './assets/profile.png';
 
 export const PERSONAL_INFO = {
   name: 'Tharunkumar K',
+  profileImage: profileImg, // ✅ ADDED (THIS FIXES IMAGE ISSUE)
   email: 'tharunkumark42007@gmail.com',
   phone: '+91 8760964830',
   location: 'Dharapuram, Tamil Nadu',
@@ -38,24 +40,41 @@ export const TECHNICAL_SKILLS: SkillCategory[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
-  { title: 'Introduction to AWS Inferentia and Amazon EC2 Inf1 Instances', issuer: 'Simplilearn (SkillUp) | AWS' },
-  { title: 'TCS iON Career Edge Young Professional', issuer: 'TCS iON (Tata Consultancy Services)' },
-  { title: 'Salesforce Administrator Explorer', issuer: 'FutureSkills PRIME' },
-  { title: 'Python Foundation', issuer: 'Infosys Springboard' },
-  { title: 'Python Course for Beginners', issuer: 'Scaler' }
+  {
+    title: 'Introduction to AWS Inferentia and Amazon EC2 Inf1 Instances',
+    issuer: 'Simplilearn (SkillUp) | AWS'
+  },
+  {
+    title: 'TCS iON Career Edge Young Professional',
+    issuer: 'TCS iON (Tata Consultancy Services)'
+  },
+  {
+    title: 'Salesforce Administrator Explorer',
+    issuer: 'FutureSkills PRIME'
+  },
+  {
+    title: 'Python Foundation',
+    issuer: 'Infosys Springboard'
+  },
+  {
+    title: 'Python Course for Beginners',
+    issuer: 'Scaler'
+  }
 ];
 
 export const PROJECTS: Project[] = [
   {
     title: 'Smart Helmet & IoT Safety System',
-    description: 'IoT-based rider safety system with helmet detection and alcohol sensing capabilities.',
+    description:
+      'IoT-based rider safety system with helmet detection and alcohol sensing capabilities.',
     date: 'Nov 2025 — Jan 2026',
     link: '#',
     tags: ['IoT', 'Embedded Systems', 'Safety']
   },
   {
     title: 'VSBEC Study Material Portal',
-    description: 'A web portal designed for students to access study notes easily.',
+    description:
+      'A web portal designed for students to access study notes easily.',
     link: 'https://vsbec.unaux.com',
     tags: ['HTML', 'CSS', 'JavaScript', 'Web Dev']
   }
@@ -70,4 +89,3 @@ export const SOFT_SKILLS = [
 ];
 
 export const HOBBIES = ['Photography', 'Video Editing', 'Designing'];
-
