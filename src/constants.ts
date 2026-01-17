@@ -1,11 +1,13 @@
-import { Project, Certification, SkillCategory } from './types';
+import { Project, CertificationItem, SkillCategory } from './type';
 
 // ✅ IMPORT IMAGE CORRECTLY
 import profileImg from './assets/profile.png';
+import profileImg2 from './assets/profile2.png';
 
 export const PERSONAL_INFO = {
   name: 'Tharunkumar K',
   profileImage: profileImg, // ✅ FIXED
+  profileImage2: profileImg2,
   email: 'tharunkumark42007@gmail.com',
   phone: '+91 8760964830',
   location: 'Dharapuram, Tamil Nadu',
@@ -39,7 +41,7 @@ export const TECHNICAL_SKILLS: SkillCategory[] = [
   { name: 'Database', skills: ['MySQL'] }
 ];
 
-export const CERTIFICATIONS: Certification[] = [
+export const CERTIFICATIONS: CertificationItem[] = [
   {
     title: 'Introduction to AWS Inferentia and Amazon EC2 Inf1 Instances',
     issuer: 'Simplilearn (SkillUp) | AWS'
