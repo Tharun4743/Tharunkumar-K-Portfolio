@@ -1,16 +1,11 @@
 import { Project, Certification, SkillCategory } from './types';
 
-// ✅ IMPORT IMAGES CORRECTLY
+// ✅ IMPORT IMAGE CORRECTLY
 import profileImg from './assets/profile.png';
-import profileImg2 from './assets/profile2.png';
 
 export const PERSONAL_INFO = {
   name: 'Tharunkumar K',
-
-  // ✅ TWO DIFFERENT FRAMES
-  profileHero: profile.png,     // Frame 1 (Hero section)
-  profileAbout: profile2.png,   // Frame 2 (About section)
-
+  profileImage: profileImg, // ✅ FIXED
   email: 'tharunkumark42007@gmail.com',
   phone: '+91 8760964830',
   location: 'Dharapuram, Tamil Nadu',
