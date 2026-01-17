@@ -1,7 +1,5 @@
-import { Project, Certification, SkillCategory } from './types';
-
-// Profile image added so the app has a valid src for the portrait.
-// If you prefer a local image, add the file to src/assets/profile.jpg and replace the URL with an import.
+import { Project, CertificationItem, SkillCategory } from './types';
+import profileImg from './assets/profile.png';  // ✅ Your GitHub image imported
 
 export const PERSONAL_INFO = {
   name: 'Tharunkumar K',
@@ -12,13 +10,12 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/Tharun4743',
   leetcode: 'https://leetcode.com/u/Tharunkumar_K/',
   geeksforgeeks: 'https://www.geeksforgeeks.org/profile/tharunkumark42007',
-  // Professional-looking Unsplash portrait used as a reliable fallback.
-  profileImage: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=800&auto=format&fit=crop&crop=faces&sat=-20',
+  profileImage: profileImg,  // ✅ Uses your local profile.png
   profileSummary:
     'Information Technology undergraduate passionate about innovation and technology, with strong skills in Java, AI, Data Structures, and Web Development. Experienced in AI and IoT projects, problem-solving, and debugging, and motivated to build scalable real-world solutions while contributing to meaningful product development.'
 };
 
-export const EDUCATION = [
+export const EDUCATION: EducationItem[] = [
   {
     institution: 'VSB Engineering College, Karur',
     degree: 'B.E. in Information Technology',
@@ -32,8 +29,12 @@ export const TECHNICAL_SKILLS: SkillCategory[] = [
   { name: 'Web', skills: ['React', 'Tailwind CSS', 'Node.js'] }
 ];
 
-export const CERTIFICATIONS: Certification[] = [
-  { title: 'Python Foundation', issuer: 'Infosys Springboard' }
+export const CERTIFICATIONS: CertificationItem[] = [
+  { 
+    name: 'Python Foundation',  // ✅ Fixed: matches CertificationItem type
+    issuer: 'Infosys Springboard',
+    year: '2024'  // ✅ Added required year field
+  }
 ];
 
 export const PROJECTS: Project[] = [
