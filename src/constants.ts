@@ -8,8 +8,8 @@ export const PERSONAL_INFO = {
   name: 'Tharunkumar K',
 
   // ✅ TWO DIFFERENT FRAMES
-  profileHero: profileImg,     // Frame 1 (Hero section)
-  profileAbout: profileImg2,   // Frame 2 (About section)
+  profileHero: profile.png,     // Frame 1 (Hero section)
+  profileAbout: profile2.png,   // Frame 2 (About section)
 
   email: 'tharunkumark42007@gmail.com',
   phone: '+91 8760964830',
