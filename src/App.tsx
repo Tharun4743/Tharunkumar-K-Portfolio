@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -21,7 +20,11 @@ import {
   X,
   Terminal,
   MessageSquare,
-  Sparkles
+  Sparkles,
+  GraduationCap,
+  Star,
+  Database,
+  Server
 } from 'lucide-react';
 import { 
   PERSONAL_INFO, 
@@ -212,8 +215,8 @@ const App: React.FC = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 + (i * 0.1) }}
-                      whileHover={{ y: -8, scale: 1.1, backgroundColor: '#fff', borderColor: '#3b82f6' }}
-                      className="p-4 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm transition-all text-slate-500 hover:text-blue-600"
+                      whileHover={{ y: -8, scale: 1.1 }}
+                      className="p-4 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm transition-all text-slate-500 hover:text-blue-600 hover:bg-blue-50"
                       title={social.label}
                     >
                       {social.icon}
@@ -223,7 +226,6 @@ const App: React.FC = () => {
               </div>
             </motion.div>
             
-            {/* HERO PHOTO - ENSURE IT IS VISIBLE */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -231,7 +233,6 @@ const App: React.FC = () => {
               className="w-full lg:w-2/5 order-1 lg:order-2 flex justify-center"
             >
               <div className="relative group max-w-[400px] w-full px-4 lg:px-0">
-                {/* Glow Backdrop */}
                 <div className="absolute -inset-8 bg-blue-500/20 rounded-[4rem] blur-[50px] -z-10 group-hover:bg-blue-500/30 transition-colors"></div>
                 
                 <motion.div 
@@ -270,7 +271,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* About Section - Photo Always Visible Here Too */}
+      {/* About Section */}
       <section id="about" className="py-32 bg-slate-50/50">
         <div className="container mx-auto px-6">
           <SectionHeader 
@@ -283,15 +284,26 @@ const App: React.FC = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative hidden lg:block"
+              className="relative"
             >
-              <div className="relative aspect-square max-w-[440px] mx-auto">
+              <div className="aspect-square max-w-[440px] mx-auto lg:block hidden">
                 <div className="absolute inset-0 bg-blue-600 rounded-[3.5rem] rotate-6 scale-95 opacity-5"></div>
                 <div className="absolute inset-0 bg-blue-600 rounded-[3.5rem] -rotate-3 scale-95 opacity-5"></div>
                 <img 
                   src={PERSONAL_INFO.profileImage} 
                   alt="Tharunkumar Portrait"
                   className="relative z-10 w-full h-full object-cover object-top rounded-[3.5rem] shadow-2xl border-[6px] border-white"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop';
+                  }}
+                />
+              </div>
+              <div className="lg:hidden">
+                <img 
+                  src={PERSONAL_INFO.profileImage} 
+                  alt="Tharunkumar Portrait"
+                  className="w-full max-w-sm mx-auto rounded-[2rem] shadow-2xl border-[6px] border-white"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop';
@@ -326,9 +338,6 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Rest of the sections... (Skills, Projects, Education, Contact) */}
-      {/* ... Keeping the structure identical to previous successful version but ensuring high visibility ... */}
-      
       {/* Skills Section */}
       <section id="skills" className="py-32 bg-white">
         <div className="container mx-auto px-6">
@@ -366,11 +375,88 @@ const App: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Soft Skills */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-24"
+          >
+            <SectionHeader 
+              title="Soft Skills" 
+              subtitle="What makes me exceptional beyond code."
+              icon={<Sparkles size={28} />}
+            />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {SOFT_SKILLS.map((skill, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group p-8 bg-slate-50/50 rounded-[2.5rem] border border-slate-100 hover:border-blue-300 hover:bg-white transition-all shadow-sm hover:shadow-xl text-center"
+                >
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Star size={32} className="text-blue-600 group-hover:rotate-12 transition-transform" />
+                  </div>
+                  <h4 className="text-xl font-black text-slate-900 mb-4 tracking-tight">{skill.name}</h4>
+                  <p className="text-slate-600 leading-relaxed">{skill.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-32 bg-slate-50/50">
+        <div className="container mx-auto px-6">
+          <SectionHeader 
+            title="Education" 
+            subtitle="Academic foundation that shaped my technical journey."
+            icon={<GraduationCap size={28} />}
+          />
+          <div className="max-w-4xl mx-auto space-y-12">
+            {EDUCATION.map((edu, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.2 }}
+                className="group flex gap-8 p-10 bg-white rounded-[3rem] border border-slate-100 hover:border-blue-400 hover:shadow-2xl transition-all"
+              >
+                <div className="w-2 h-full bg-gradient-to-b from-blue-600 to-indigo-600 rounded-full group-hover:scale-[1.1] transition-transform"></div>
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">{edu.degree}</h3>
+                    <span className="px-4 py-1 bg-blue-600 text-white text-sm font-bold rounded-xl">{edu.year}</span>
+                  </div>
+                  <p className="text-slate-600 text-lg mb-4 font-medium">{edu.institution}</p>
+                  <div className="flex flex-wrap gap-3">
+                    {edu.gpa && (
+                      <span className="px-4 py-2 bg-slate-50 text-slate-700 font-black text-sm rounded-xl border border-slate-200">
+                        GPA: {edu.gpa}
+                      </span>
+                    )}
+                    {edu.field && (
+                      <span className="px-4 py-2 bg-blue-50 text-blue-700 font-black text-sm rounded-xl border border-blue-200">
+                        {edu.field}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-32 bg-slate-50/50">
+      <section id="projects" className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <SectionHeader 
             title="Projects" 
@@ -420,8 +506,87 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Certifications Section */}
+      <section id="certs" className="py-32 bg-slate-50/50">
+        <div className="container mx-auto px-6">
+          <SectionHeader 
+            title="Certifications" 
+            subtitle="Validated skills from industry leaders."
+            icon={<Award size={28} />}
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CERTIFICATIONS.map((cert, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative p-10 bg-white rounded-[3rem] border border-slate-100 hover:border-blue-400 hover:shadow-2xl hover:scale-[1.02] transition-all overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-indigo-600/5 group-hover:from-blue-600/10 group-hover:to-indigo-600/10 transition-all duration-500"></div>
+                <div className="relative z-10">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center shadow-2xl group-hover:rotate-6 transition-all">
+                    <Award size={28} className="text-white" />
+                  </div>
+                  <h4 className="text-2xl font-black text-slate-900 mb-4 text-center tracking-tight group-hover:text-blue-600 transition-colors">{cert.title}</h4>
+                  <p className="text-slate-600 mb-6 text-center font-medium">{cert.issuer}</p>
+                  <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
+                    <span>{cert.date}</span>
+                    {cert.link && (
+                      <motion.a 
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        className="text-blue-600 hover:text-blue-700 font-bold"
+                      >
+                        View
+                      </motion.a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hobbies Section */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <SectionHeader 
+            title="Beyond Code" 
+            subtitle="What keeps me energized and inspired."
+            icon={<Palette size={28} />}
+          />
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {HOBBIES.map((hobby, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group relative p-8 bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl border border-slate-100 hover:border-blue-300 hover:shadow-2xl transition-all overflow-hidden h-48 flex flex-col justify-end"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="w-16 h-16 mb-4 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg group-hover:bg-white group-hover:shadow-xl transition-all">
+                    <div className="text-2xl group-hover:scale-110 transition-transform">{hobby.icon}</div>
+                  </div>
+                  <h4 className="font-black text-lg text-slate-900 mb-2 tracking-tight">{hobby.name}</h4>
+                  <p className="text-sm text-slate-600 font-medium">{hobby.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-white">
+      <section id="contact" className="py-32 bg-slate-50/50">
         <div className="container mx-auto px-6">
           <SectionHeader 
             title="Let's Connect" 
@@ -433,9 +598,9 @@ const App: React.FC = () => {
               <motion.a 
                 whileHover={{ scale: 1.03, y: -5 }}
                 href={`mailto:${PERSONAL_INFO.email}`} 
-                className="block p-10 rounded-[3rem] bg-slate-50 border border-slate-100 hover:border-blue-600 transition-all group shadow-sm hover:shadow-xl"
+                className="block p-10 rounded-[3rem] bg-white border border-slate-100 hover:border-blue-600 transition-all group shadow-sm hover:shadow-xl"
               >
-                <div className="w-16 h-16 rounded-[1.5rem] bg-white flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
+                <div className="w-16 h-16 rounded-[1.5rem] bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-all shadow-lg">
                   <Mail size={32} />
                 </div>
                 <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Drop me a message</h4>
@@ -445,9 +610,9 @@ const App: React.FC = () => {
               <motion.a 
                 whileHover={{ scale: 1.03, y: -5 }}
                 href={`tel:${PERSONAL_INFO.phone}`} 
-                className="block p-10 rounded-[3rem] bg-slate-50 border border-slate-100 hover:border-blue-600 transition-all group shadow-sm hover:shadow-xl"
+                className="block p-10 rounded-[3rem] bg-white border border-slate-100 hover:border-blue-600 transition-all group shadow-sm hover:shadow-xl"
               >
-                <div className="w-16 h-16 rounded-[1.5rem] bg-white flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
+                <div className="w-16 h-16 rounded-[1.5rem] bg-gradient-to-r from-emerald-600 to-teal-600 flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-all shadow-lg">
                   <Phone size={32} />
                 </div>
                 <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Give me a call</h4>
@@ -457,10 +622,10 @@ const App: React.FC = () => {
 
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-8">
               {[
-                { name: 'GitHub', link: PERSONAL_INFO.github, icon: <Github size={36} />, color: 'hover:text-black hover:border-black' },
-                { name: 'LinkedIn', link: PERSONAL_INFO.linkedin, icon: <Linkedin size={36} />, color: 'hover:text-blue-700 hover:border-blue-700' },
-                { name: 'LeetCode', link: PERSONAL_INFO.leetcode, icon: <Code size={36} />, color: 'hover:text-yellow-600 hover:border-yellow-600' },
-                { name: 'GeeksForGeeks', link: PERSONAL_INFO.geeksforgeeks, icon: <Terminal size={36} />, color: 'hover:text-green-700 hover:border-green-700' }
+                { name: 'GitHub', link: PERSONAL_INFO.github, icon: <Github size={36} />, color: 'group-hover:text-black group-hover:border-black' },
+                { name: 'LinkedIn', link: PERSONAL_INFO.linkedin, icon: <Linkedin size={36} />, color: 'group-hover:text-blue-700 group-hover:border-blue-700' },
+                { name: 'LeetCode', link: PERSONAL_INFO.leetcode, icon: <Code size={36} />, color: 'group-hover:text-yellow-600 group-hover:border-yellow-600' },
+                { name: 'GeeksForGeeks', link: PERSONAL_INFO.geeksforgeeks, icon: <Terminal size={36} />, color: 'group-hover:text-green-700 group-hover:border-green-700' }
               ].map((item, idx) => (
                 <motion.a 
                   key={idx} 
@@ -472,15 +637,15 @@ const App: React.FC = () => {
                   href={item.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className={`p-10 rounded-[3.5rem] bg-slate-50 border border-slate-100 transition-all group ${item.color} shadow-sm hover:shadow-2xl`}
+                  className={`p-10 rounded-[3.5rem] bg-white border border-slate-100 transition-all group shadow-sm hover:shadow-2xl ${item.color}`}
                 >
                   <div className="flex items-center justify-between mb-8">
-                    <div className="p-5 bg-white rounded-[2rem] group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-md transition-all">
+                    <div className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 rounded-[2rem] group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:shadow-md group-hover:text-white transition-all">
                       {item.icon}
                     </div>
-                    <ExternalLink size={20} className="opacity-0 group-hover:opacity-100 transition-all" />
+                    <ExternalLink size={20} className="opacity-0 group-hover:opacity-100 transition-all text-slate-400 group-hover:text-white" />
                   </div>
-                  <h3 className="text-2xl font-black mb-3 tracking-tighter">{item.name}</h3>
+                  <h3 className="text-2xl font-black mb-3 tracking-tighter text-slate-900 group-hover:text-white transition-colors">{item.name}</h3>
                 </motion.a>
               ))}
             </div>
@@ -489,11 +654,21 @@ const App: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="pt-24 pb-12 bg-white border-t border-slate-50">
+      <footer className="pt-24 pb-12 bg-gradient-to-r from-slate-50 to-blue-50 border-t border-slate-100">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-slate-400 font-bold text-xs tracking-widest uppercase">
-            &copy; {new Date().getFullYear()} THARUNKUMAR K &bull; ALL RIGHTS RESERVED
-          </p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl flex items-center justify-center shadow-2xl">
+              <div className="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-blue-600 font-black text-xl">TK</div>
+            </div>
+            <p className="text-slate-500 font-bold text-sm tracking-widest uppercase mb-2">
+              © {new Date().getFullYear()} THARUNKUMAR K • ALL RIGHTS RESERVED
+            </p>
+            <p className="text-slate-400 text-xs">Crafted with ❤️ using React & Framer Motion</p>
+          </motion.div>
         </div>
       </footer>
     </div>
@@ -501,3 +676,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
