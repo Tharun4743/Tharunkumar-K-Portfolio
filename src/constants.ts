@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/Tharun4743',
   leetcode: 'https://leetcode.com/u/Tharunkumar__K/',
   geeksforgeeks: 'https://www.geeksforgeeks.org/profile/tharunkumark4743',
-  resume: 'https://drive.google.com/file/d/1_J24AprxB4M49KpwVhub-JPeFldRRL36/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/1JTrnKScBdl6biPFtcasHHVVyQZ0qyabW/view?usp=sharing',
   profileSummary:
     'Information Technology undergraduate passionate about innovation and technology, with strong skills in Java, AI, Data Structures, and Web Development. Experienced in AI and IoT projects, problem-solving, and debugging, and motivated to build scalable real-world solutions while contributing to meaningful product development.'
 };
