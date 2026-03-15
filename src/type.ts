@@ -3,7 +3,9 @@ export type Project = {
   description: string;
   tags: string[];
   link?: string;
-  date?: string; // Added to match constants
+  date?: string; 
+  githubLink?: string;
+  driveLink?: string;
 };
 
 export type SkillCategory = {
@@ -22,6 +24,7 @@ export type CertificationItem = {
   title: string; // Changed from name to match constants
   issuer: string;
   year?: string; // Made optional as it's missing in some constants
+  link?: string;
 };
 
 // NEW: Internship type

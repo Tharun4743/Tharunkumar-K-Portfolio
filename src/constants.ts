@@ -44,24 +44,14 @@ export const TECHNICAL_SKILLS: SkillCategory[] = [
 
 export const CERTIFICATIONS: CertificationItem[] = [
   {
-    title: 'Introduction to AWS Inferentia and Amazon EC2 Inf1 Instances',
-    issuer: 'Simplilearn (SkillUp) | AWS'
-  },
-  {
-    title: 'TCS iON Career Edge Young Professional',
-    issuer: 'TCS iON (Tata Consultancy Services)'
+    title: 'Infosys Virtual Internship 6.0',
+    issuer: 'Infosys Springboard',
+    link: 'https://drive.google.com/file/d/1Q9M6APOGYKO0_jYrKBAO4fAwTFEZJigy/view?usp=drive_link'
   },
   {
     title: 'Salesforce Administrator Explorer',
-    issuer: 'FutureSkills PRIME'
-  },
-  {
-    title: 'Python Foundation',
-    issuer: 'Infosys Springboard'
-  },
-  {
-    title: 'Python Course for Beginners',
-    issuer: 'Scaler'
+    issuer: 'Trailhead',
+    link: 'https://drive.google.com/file/d/1IgkTkYQ-dfhashY-7-R6soyY7YQhw4zI/view?usp=drive_link'
   }
 ];
 
@@ -71,7 +61,8 @@ export const PROJECTS: Project[] = [
     description:
       'IoT-based rider safety system with helmet detection and alcohol sensing capabilities.',
     date: 'Nov 2025 — Jan 2026',
-    link: '#',
+    githubLink: 'https://github.com/Tharun4743/AGILE-INNOVATORS-smart-helmet-',
+    driveLink: 'https://drive.google.com/drive/folders/1kYhyoOx9-Tr4WyOJkmUz7K4PDDpmaHEr?usp=drive_link',
     tags: ['IoT', 'Embedded Systems', 'Safety']
   },
   {
@@ -87,9 +78,9 @@ export const LEADERSHIP: any[] = [
   {
     title: 'GeeksforGeeks College Ambassador',
     organization: 'GeeksforGeeks (GFG)',
-    period: '2025 – Present',
+    period: '2026',
     description:
-      'Representing GeeksforGeeks at my college by organizing technical and non-technical events, promoting coding culture, guiding students in DSA and career preparation, and acting as a bridge between students and the GeeksforGeeks community.'
+      "As the official face of GeeksforGeeks at my college, I'm on a mission to build a strong coding culture on campus. I organize tech workshops, host events to make learning fun, and act as the direct link between our students and the GFG community to help everyone grow their careers."
   }
 ];
 
@@ -103,12 +94,3 @@ export const ACHIEVEMENTS: any[] = [
   }
 ];
 
-export const SOFT_SKILLS = [
-  'Problem Solving',
-  'Communication',
-  'Figma',
-  'Team Lead',
-  'Adaptability'
-];
-
-export const HOBBIES = ['Photography', 'Video Editing', 'Designing'];

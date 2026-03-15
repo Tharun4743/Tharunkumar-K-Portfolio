@@ -30,11 +30,33 @@ import {
   TECHNICAL_SKILLS,
   CERTIFICATIONS,
   PROJECTS,
-  SOFT_SKILLS,
-  HOBBIES,
   LEADERSHIP,
   ACHIEVEMENTS
 } from './constants';
+
+const THEMES = [
+  { primary: '#4f46e5', secondary: '#7c3aed', soft: '#f5f3ff', glow: 'rgba(79, 70, 229, 0.2)' }, // Indigo
+  { primary: '#059669', secondary: '#10b981', soft: '#ecfdf5', glow: 'rgba(16, 185, 129, 0.2)' }, // Emerald
+  { primary: '#e11d48', secondary: '#fb7185', soft: '#fff1f2', glow: 'rgba(225, 29, 72, 0.2)' }, // Rose
+  { primary: '#d97706', secondary: '#f59e0b', soft: '#fffbeb', glow: 'rgba(217, 119, 6, 0.2)' }, // Amber
+  { primary: '#0891b2', secondary: '#06b6d4', soft: '#ecfeff', glow: 'rgba(8, 145, 178, 0.2)' }, // Cyan
+  { primary: '#7c3aed', secondary: '#a78bfa', soft: '#f5f3ff', glow: 'rgba(124, 58, 237, 0.2)' }, // Violet
+  { primary: '#2563eb', secondary: '#60a5fa', soft: '#eff6ff', glow: 'rgba(37, 99, 235, 0.2)' }, // Blue
+  { primary: '#701a75', secondary: '#d946ef', soft: '#fdf4ff', glow: 'rgba(217, 70, 239, 0.2)' }, // Fuchsia
+  { primary: '#0d9488', secondary: '#2dd4bf', soft: '#f0fdfa', glow: 'rgba(13, 148, 136, 0.2)' }, // Teal
+  { primary: '#ea580c', secondary: '#f97316', soft: '#fff7ed', glow: 'rgba(234, 88, 12, 0.2)' }, // Orange
+  { primary: '#65a30d', secondary: '#a3e635', soft: '#f7fee7', glow: 'rgba(101, 163, 13, 0.2)' }, // Lime
+  { primary: '#be123c', secondary: '#fb7185', soft: '#fff1f2', glow: 'rgba(190, 18, 60, 0.2)' }, // Crimson
+  { primary: '#0284c7', secondary: '#38bdf8', soft: '#f0f9ff', glow: 'rgba(2, 132, 199, 0.2)' }, // Sky
+  { primary: '#9333ea', secondary: '#c084fc', soft: '#faf5ff', glow: 'rgba(147, 51, 234, 0.2)' }, // Purple
+  { primary: '#db2777', secondary: '#f472b6', soft: '#fdf2f8', glow: 'rgba(219, 39, 119, 0.2)' }, // Pink
+  { primary: '#15803d', secondary: '#22c55e', soft: '#f0fdf4', glow: 'rgba(21, 128, 61, 0.2)' }, // Green
+  { primary: '#854d0e', secondary: '#ca8a04', soft: '#fefce8', glow: 'rgba(133, 77, 14, 0.2)' }, // Gold/Yellow
+  { primary: '#6366f1', secondary: '#818cf8', soft: '#eef2ff', glow: 'rgba(99, 102, 241, 0.2)' }, // Indigo 500
+  { primary: '#ec4899', secondary: '#f472b6', soft: '#fdf2f8', glow: 'rgba(236, 72, 153, 0.2)' }, // Modern Pink
+  { primary: '#f97316', secondary: '#fb923c', soft: '#fff7ed', glow: 'rgba(249, 115, 22, 0.2)' }, // Vibrant Orange
+  { primary: '#06b6d4', secondary: '#22d3ee', soft: '#ecfeff', glow: 'rgba(6, 182, 212, 0.2)' }, // Bright Cyan
+];
 
 const Nav: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,10 +98,10 @@ const Nav: React.FC = () => {
         <a
           href="#"
           onClick={(e) => handleNavClick(e, 'top')}
-          className="text-2xl font-black tracking-tighter text-blue-600 hover:scale-105 transition-transform flex items-center gap-2"
+          className="text-2xl font-black tracking-tighter text-theme hover:scale-105 transition-transform flex items-center gap-2"
         >
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">TK</div>
-          <span>Tharunkumar<span className="text-slate-400">.</span></span>
+          <div className="w-8 h-8 bg-theme rounded-lg flex items-center justify-center text-white text-sm shadow-md">TK</div>
+          <span className="gradient-text">Tharunkumar <span className="text-slate-400">K</span></span>
         </a>
 
         <div className="hidden md:flex items-center space-x-2">
@@ -88,7 +110,7 @@ const Nav: React.FC = () => {
               key={link.id}
               href={`#${link.id}`}
               onClick={(e) => handleNavClick(e, link.id)}
-              className="px-4 py-2 text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors rounded-xl hover:bg-blue-50"
+              className="px-4 py-2 text-sm font-bold text-slate-600 hover:text-theme transition-colors rounded-xl hover:bg-theme-soft"
             >
               {link.name}
             </a>
@@ -138,7 +160,7 @@ const SectionHeader: React.FC<{ title: string; subtitle?: string; icon: React.Re
     className="mb-16"
   >
     <div className="flex items-center gap-4 mb-4">
-      <div className="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-xl shadow-blue-100">
+      <div className="w-14 h-14 rounded-2xl bg-theme flex items-center justify-center text-white shadow-xl" style={{ boxShadow: '0 8px 20px -5px var(--theme-glow)' }}>
         {icon}
       </div>
       <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">{title}</h2>
@@ -148,8 +170,17 @@ const SectionHeader: React.FC<{ title: string; subtitle?: string; icon: React.Re
 );
 
 const App: React.FC = () => {
+  useEffect(() => {
+    const randomTheme = THEMES[Math.floor(Math.random() * THEMES.length)];
+    const root = document.documentElement;
+    root.style.setProperty('--theme-primary', randomTheme.primary);
+    root.style.setProperty('--theme-secondary', randomTheme.secondary);
+    root.style.setProperty('--theme-bg-soft', randomTheme.soft);
+    root.style.setProperty('--theme-glow', randomTheme.glow);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white selection:bg-theme-soft selection:text-theme">
       <Nav />
 
       {/* Hero Section */}
@@ -157,7 +188,8 @@ const App: React.FC = () => {
         <motion.div
           animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute -top-20 -right-20 w-96 h-96 bg-blue-100/30 blur-[100px] rounded-full -z-10"
+          className="absolute -top-20 -right-20 w-96 h-96 blur-[100px] rounded-full -z-10 opacity-30"
+          style={{ backgroundColor: 'var(--theme-glow)' }}
         ></motion.div>
 
         <div className="container mx-auto px-6">
@@ -172,41 +204,42 @@ const App: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-xs font-bold uppercase tracking-widest mb-8 border border-blue-100"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-theme-soft text-theme rounded-full text-xs font-bold uppercase tracking-widest mb-8 border border-theme"
+                style={{ borderColor: 'var(--theme-glow)' }}
               >
                 <Sparkles size={14} className="animate-pulse" />
                 Available for Opportunities
               </motion.div>
 
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-8 leading-[1] tracking-tighter">
-                Engineering <span className="text-blue-600 block sm:inline">Future</span> Solutions.
+                Engineering <span className="gradient-text block sm:inline">Future</span> Solutions.
               </h1>
 
               <p className="text-lg md:text-2xl text-slate-600 mb-10 leading-relaxed max-w-2xl font-medium mx-auto lg:mx-0">
-                Hi, I'm <span className="text-slate-900 font-bold underline decoration-blue-500 decoration-4 underline-offset-4">{PERSONAL_INFO.name}</span>. I build intelligent web applications and IoT systems that solve real-world problems.
+                Hi, I'm <span className="text-slate-900 font-bold underline decoration-4 underline-offset-4" style={{ textDecorationColor: 'var(--theme-primary)' }}>{PERSONAL_INFO.name}</span>. I build intelligent web applications and IoT systems that solve real-world problems.
               </p>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 items-center">
                 <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(59 130 246 / 0.2)" }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px var(--theme-glow)" }}
                   whileTap={{ scale: 0.95 }}
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-[2rem] font-bold transition-all flex items-center gap-3 group"
+                  className="px-10 py-5 bg-theme hover:brightness-110 text-white rounded-[2rem] font-bold transition-all flex items-center gap-3 group shadow-lg"
                 >
                   Explore My Work
                   <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </motion.button>
 
                 <motion.a
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(59 130 246 / 0.2)" }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px var(--theme-glow)" }}
                   whileTap={{ scale: 0.95 }}
                   href={PERSONAL_INFO.resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-5 bg-white text-blue-600 border-2 border-blue-100 hover:border-blue-600 hover:bg-blue-50 rounded-[2rem] font-bold transition-all flex items-center gap-3 group shadow-sm"
+                  className="px-8 py-5 bg-white text-theme border-2 border-theme-soft hover:border-theme hover:bg-theme-soft rounded-[2rem] font-bold transition-all flex items-center gap-3 group shadow-sm"
                 >
                   <FileText size={20} className="group-hover:scale-110 transition-transform" />
                   Resume
@@ -227,8 +260,8 @@ const App: React.FC = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 + (i * 0.1) }}
-                      whileHover={{ y: -8, scale: 1.1, backgroundColor: '#fff', borderColor: '#3b82f6' }}
-                      className="p-4 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm transition-all text-slate-500 hover:text-blue-600"
+                      whileHover={{ y: -8, scale: 1.1, backgroundColor: '#fff', borderColor: 'var(--theme-primary)' }}
+                      className="p-4 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm transition-all text-slate-500 hover:text-theme"
                       title={social.label}
                     >
                       {social.icon}
@@ -247,7 +280,7 @@ const App: React.FC = () => {
             >
               <div className="relative group max-w-[400px] w-full px-4 lg:px-0">
                 {/* Glow Backdrop */}
-                <div className="absolute -inset-8 bg-blue-500/20 rounded-[4rem] blur-[50px] -z-10 group-hover:bg-blue-500/30 transition-colors"></div>
+                <div className="absolute -inset-8 bg-theme-soft rounded-[4rem] blur-[50px] -z-10 transition-colors opacity-50" style={{ backgroundColor: 'var(--theme-glow)' }}></div>
 
                 <motion.div
                   animate={{ y: [0, -15, 0] }}
@@ -257,7 +290,7 @@ const App: React.FC = () => {
                   <img
                     src={PERSONAL_INFO.profileImage}
                     alt={PERSONAL_INFO.name}
-                    className="w-full h-full object-cover object-top scale-100 group-hover:scale-110 transition-transform duration-1000"
+                    className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-1000"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop';
@@ -271,12 +304,12 @@ const App: React.FC = () => {
                   transition={{ delay: 0.8 }}
                   className="absolute -bottom-4 -left-4 bg-white p-5 rounded-3xl shadow-2xl border border-slate-100 flex items-center gap-4 hover:scale-110 transition-transform z-10"
                 >
-                  <div className="p-3 bg-blue-600 text-white rounded-xl shadow-lg">
-                    <Terminal size={20} />
+                  <div className="p-3 bg-theme text-white rounded-xl shadow-lg">
+                    <Award size={20} />
                   </div>
                   <div>
-                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-1">Passionate About</p>
-                    <p className="text-base font-black text-slate-900 leading-none">Innovation</p>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-1">Hackathon Winner</p>
+                    <p className="text-base font-black text-slate-900 leading-none">Code Thugs 2k26</p>
                   </div>
                 </motion.div>
               </div>
@@ -300,14 +333,14 @@ const App: React.FC = () => {
               viewport={{ once: true }}
               className="relative hidden lg:block"
             >
-              <div className="relative aspect-square max-w-[440px] mx-auto">
-                <div className="absolute inset-0 bg-blue-600 rounded-[3.5rem] rotate-6 scale-95 opacity-5"></div>
-                <div className="absolute inset-0 bg-blue-600 rounded-[3.5rem] -rotate-3 scale-95 opacity-5"></div>
+              <div className="relative aspect-square max-w-[440px] mx-auto rounded-[3.5rem] overflow-hidden border-[8px] border-white shadow-2xl">
+                <div className="absolute inset-0 bg-theme rounded-[3rem] rotate-6 scale-95 opacity-5 -z-10"></div>
+                <div className="absolute inset-0 bg-theme rounded-[3rem] -rotate-3 scale-95 opacity-5 -z-10"></div>
 
                 <img
                   src={PERSONAL_INFO.profileImage2}
                   alt="Tharunkumar Portrait"
-                  className="relative z-10 w-full h-full object-cover object-top rounded-[3.5rem] shadow-2xl border-[6px] border-white"
+                  className="w-full h-full object-cover object-[center_65%] scale-[1.2] transition-transform duration-1000"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop';
@@ -326,13 +359,13 @@ const App: React.FC = () => {
                 {PERSONAL_INFO.profileSummary}
               </p>
               <div className="grid sm:grid-cols-2 gap-8">
-                <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:border-blue-300 transition-all">
-                  <MapPin size={24} className="text-blue-600 mb-6 group-hover:scale-110 transition-transform" />
+                <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:border-theme transition-all">
+                  <MapPin size={24} className="text-theme mb-6 group-hover:scale-110 transition-transform" />
                   <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Location</h4>
                   <p className="text-lg font-black text-slate-900">{PERSONAL_INFO.location}</p>
                 </div>
-                <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:border-blue-300 transition-all">
-                  <Mail size={24} className="text-blue-600 mb-6 group-hover:scale-110 transition-transform" />
+                <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:border-theme transition-all">
+                  <Mail size={24} className="text-theme mb-6 group-hover:scale-110 transition-transform" />
                   <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Contact</h4>
                   <p className="text-lg font-black text-slate-900 truncate">{PERSONAL_INFO.email}</p>
                 </div>
@@ -361,19 +394,19 @@ const App: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-10 rounded-[3rem] bg-slate-50 border border-slate-100 hover:shadow-2xl hover:bg-white hover:border-blue-400 transition-all group relative overflow-hidden"
+                className="p-10 rounded-[3rem] bg-slate-50 border border-slate-100 hover:shadow-2xl hover:bg-white hover:border-theme transition-all group relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/50 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-1000"></div>
-                <h3 className="text-blue-600 font-black mb-8 uppercase tracking-widest text-xs flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-ping"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-theme-soft rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-1000" style={{ backgroundColor: 'var(--theme-glow)' }}></div>
+                <h3 className="text-theme font-black mb-8 uppercase tracking-widest text-xs flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-theme animate-ping"></div>
                   {cat.name}
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {cat.skills.map((skill, sIdx) => (
                     <motion.span
                       key={sIdx}
-                      whileHover={{ scale: 1.1, color: '#2563eb' }}
-                      className="px-5 py-2.5 bg-white rounded-xl text-sm font-black text-slate-700 border border-slate-200 group-hover:border-blue-100 shadow-sm"
+                      whileHover={{ scale: 1.1, color: 'var(--theme-primary)' }}
+                      className="px-5 py-2.5 bg-white rounded-xl text-sm font-black text-slate-700 border border-slate-200 group-hover:border-theme-soft shadow-sm"
                     >
                       {skill}
                     </motion.span>
@@ -401,14 +434,14 @@ const App: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-10 rounded-[3rem] bg-white border border-slate-100 hover:border-blue-400 hover:shadow-2xl transition-all group"
+                className="p-10 rounded-[3rem] bg-white border border-slate-100 hover:border-theme hover:shadow-2xl transition-all group"
               >
                 <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-6">
                   <div>
                     <h3 className="text-2xl font-black text-slate-900 mb-2">{edu.degree}</h3>
                     <p className="text-xl font-medium text-slate-600">{edu.institution}</p>
                   </div>
-                  <span className="px-5 py-2 bg-blue-50 text-blue-700 font-bold rounded-xl text-sm whitespace-nowrap border border-blue-100">
+                  <span className="px-5 py-2 bg-theme-soft text-theme font-bold rounded-xl text-sm whitespace-nowrap border border-theme" style={{ borderColor: 'var(--theme-glow)' }}>
                     {edu.period}
                   </span>
                 </div>
@@ -444,7 +477,7 @@ const App: React.FC = () => {
                     <h3 className="text-2xl font-black text-slate-900 mb-2">{item.title}</h3>
                     <p className="text-xl font-medium text-slate-600">{item.organization}</p>
                   </div>
-                  <span className="px-5 py-2 bg-blue-100 text-blue-700 font-bold rounded-xl text-sm whitespace-nowrap border border-blue-200">
+                  <span className="px-5 py-2 bg-theme-soft text-theme font-bold rounded-xl text-sm whitespace-nowrap border border-theme" style={{ borderColor: 'var(--theme-glow)' }}>
                     {item.period}
                   </span>
                 </div>
@@ -479,24 +512,51 @@ const App: React.FC = () => {
                     <h3 className="text-3xl font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tighter">
                       {project.title}
                     </h3>
-                    {project.link && project.link !== '#' && (
-                      <motion.a
-                        whileHover={{ scale: 1.2, rotate: 15 }}
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-5 bg-slate-50 rounded-2xl shadow-sm text-slate-400 hover:text-blue-600 transition-all border border-slate-100"
-                      >
-                        <ExternalLink size={24} />
-                      </motion.a>
-                    )}
+                    <div className="flex gap-4">
+                      {project.githubLink && (
+                        <motion.a
+                          whileHover={{ scale: 1.1, y: -5 }}
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-4 bg-slate-50 rounded-2xl shadow-sm text-slate-400 hover:text-theme transition-all border border-slate-100"
+                          title="View on GitHub"
+                        >
+                          <Github size={20} />
+                        </motion.a>
+                      )}
+                      {project.driveLink && (
+                        <motion.a
+                          whileHover={{ scale: 1.1, y: -5 }}
+                          href={project.driveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-4 bg-slate-50 rounded-2xl shadow-sm text-slate-400 hover:text-theme transition-all border border-slate-100"
+                          title="Project Files"
+                        >
+                          <FileText size={20} />
+                        </motion.a>
+                      )}
+                      {project.link && project.link !== '#' && (
+                        <motion.a
+                          whileHover={{ scale: 1.1, y: -5 }}
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-4 bg-slate-50 rounded-2xl shadow-sm text-slate-400 hover:text-theme transition-all border border-slate-100"
+                          title="Live Demo"
+                        >
+                          <ExternalLink size={20} />
+                        </motion.a>
+                      )}
+                    </div>
                   </div>
                   <p className="text-slate-600 leading-relaxed text-xl mb-12 font-medium">
                     {project.description}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-3">
                     {project.tags.map((tag, tIdx) => (
-                      <span key={tIdx} className="px-5 py-2.5 bg-slate-50 text-sm font-black text-slate-500 rounded-xl border border-slate-200 group-hover:border-blue-200 group-hover:text-blue-600 transition-colors">
+                      <span key={tIdx} className="px-5 py-2.5 bg-slate-50 text-sm font-black text-slate-500 rounded-xl border border-slate-200 group-hover:border-theme-soft group-hover:text-theme transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -523,7 +583,7 @@ const App: React.FC = () => {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group bg-slate-50 rounded-[3.5rem] p-10 border border-slate-100 hover:border-blue-400 transition-all hover:shadow-2xl"
+                className="group bg-slate-50 rounded-[3.5rem] p-10 border border-slate-100 hover:border-theme transition-all hover:shadow-2xl"
               >
                 <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-6">
                   <div>
@@ -546,34 +606,43 @@ const App: React.FC = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certs" className="py-32 bg-slate-50/50">
+      <section id="certs" className="py-24 bg-slate-50/50">
         <div className="container mx-auto px-6">
           <SectionHeader
             title="Certifications"
             subtitle="Continuous learning and professional growth."
             icon={<Award size={28} />}
           />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {CERTIFICATIONS.map((cert, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="p-8 bg-white rounded-[2.5rem] border border-slate-100 hover:border-blue-300 hover:shadow-xl transition-all group flex items-start gap-5"
+                transition={{ delay: idx * 0.05 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="p-6 bg-white rounded-3xl border border-slate-100 hover:border-theme hover:shadow-xl transition-all group flex flex-col items-center text-center gap-4"
               >
-                <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 transition-transform flex-shrink-0">
-                  <Award size={24} />
+                <div className="w-16 h-16 rounded-2xl bg-theme-soft text-theme flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
+                  <Award size={32} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-black text-slate-900 leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-base font-black text-slate-900 leading-tight mb-2 group-hover:text-theme transition-colors line-clamp-2">
                     {cert.title}
                   </h3>
-                  <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">
                     {cert.issuer}
                   </p>
-                  {cert.year && <span className="text-xs text-slate-400 mt-2 block font-medium">{cert.year}</span>}
+                  {cert.link && (
+                    <a 
+                      href={cert.link} 
+                      target="_blank" 
+                      className="mt-4 inline-flex items-center gap-2 text-xs font-black text-theme hover:underline"
+                    >
+                      View Certificate <ExternalLink size={12} />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -596,7 +665,7 @@ const App: React.FC = () => {
                 href={`mailto:${PERSONAL_INFO.email}`}
                 className="block p-10 rounded-[3rem] bg-slate-50 border border-slate-100 hover:border-blue-600 transition-all group shadow-sm hover:shadow-xl"
               >
-                <div className="w-16 h-16 rounded-[1.5rem] bg-white flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
+                <div className="w-16 h-16 rounded-[1.5rem] bg-white flex items-center justify-center text-theme mb-8 group-hover:bg-theme group-hover:text-white transition-all shadow-inner">
                   <Mail size={32} />
                 </div>
                 <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Drop me a message</h4>
