@@ -1,11 +1,19 @@
 export type Project = {
   title: string;
   description: string;
+  longDescription?: string;
   tags: string[];
   link?: string;
   date?: string; 
   githubLink?: string;
   driveLink?: string;
+  category: 'frontend' | 'backend' | 'iot' | 'fullstack';
+  features?: string[];
+  challenges?: string;
+  architecture?: string;
+  myRole?: string;
+  impact?: string;
+  keyLearnings?: string;
 };
 
 export type SkillCategory = {
@@ -25,6 +33,7 @@ export type CertificationItem = {
   issuer: string;
   year?: string; // Made optional as it's missing in some constants
   link?: string;
+  type?: 'CERTIFICATE' | 'BADGE';
 };
 
 // NEW: Internship type

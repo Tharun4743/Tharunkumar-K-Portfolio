@@ -4,9 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tharunkumar K | Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Tharunkumar K" />
 
     <!-- Tailwind via CDN (simple setup) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              theme: {
+                DEFAULT: 'var(--theme-primary)',
+                soft: 'var(--theme-bg-soft)',
+                glow: 'var(--theme-glow)',
+              }
+            }
+          }
+        }
+      }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
