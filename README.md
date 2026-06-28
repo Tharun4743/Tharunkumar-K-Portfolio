@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Hi%20I'm%20Tharunkumar%20K&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Welcome%20to%20my%20GitHub%20Profile!&descAlignY=55&descSize=18" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Hi%20I'm%20Tharunkumar%20K&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Welcome%20to%20my%20Portfolio%20Repository!&descAlignY=55&descSize=18" width="100%" />
 </div>
 
 <h3 align="center">🚀 Full-Stack Web Developer | Open Source Enthusiast | Neura Global Intern</h3>
@@ -23,8 +23,8 @@
     <img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=flat-square&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/>
   </a>
   &nbsp;
-  <a href="https://tharunkumark4743.netlify.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=netlify&logoColor=00C7B7" alt="Portfolio"/>
+  <a href="https://drive.google.com/drive/folders/1zdLQ8EoEC8X73fFAJjSJr-Ros_xckIyW" target="_blank">
+    <img src="https://img.shields.io/badge/Resume-4285F4?style=flat-square&logo=googledrive&logoColor=white" alt="Resume"/>
   </a>
   &nbsp;
   <a href="mailto:tharunkumark42007@gmail.com">
@@ -46,12 +46,10 @@
 - 🚀 **SIH 2025 Top 50** nationally out of 10,000+ submissions *(Top 0.5%)*
 - 🔬 **India Innovates 2026** — Advanced to finals track after two rigorous selection rounds
 
-
 ---
 ### 🛠️ Tech Stack
 
 **Languages**
-
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -61,56 +59,56 @@
 ![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white)
 
 **Frontend**
-
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-7C3AED?style=flat-square&logo=framer&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 
-**Backend**
-
+**Backend & Databases**
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
-![REST API](https://img.shields.io/badge/REST_APIs-FF6B6B?style=flat-square&logo=fastapi&logoColor=white)
-![NextAuth.js](https://img.shields.io/badge/NextAuth.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-
-**Databases**
-
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 ![Neon](https://img.shields.io/badge/Neon_Serverless-00C7B7?style=flat-square&logo=neon&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
 **Tools & Platforms**
-
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=black)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
 ![Arduino](https://img.shields.io/badge/Arduino_IDE-00979D?style=flat-square&logo=arduino&logoColor=white)
 ![Salesforce](https://img.shields.io/badge/Salesforce-00A1E0?style=flat-square&logo=salesforce&logoColor=white)
-![Cloudinary](https://img.shields.io/badge/Cloudinary-F6821F?style=flat-square&logo=cloudinary&logoColor=white)
+
 ---
 
 ### 🚀 Highlighted Projects
 
-- 🎓 **Campus Connect | Job Matching & ATS Platform** *(Jun 2026)*
-  `React · TypeScript · Node.js · Express · Supabase · Cloudinary`
-  Full-stack job matching platform for students, recruiters & TPOs with intelligent AI-powered ATS resume scoring. Reduces hiring cycle time by **40%** through real-time matching and automated scheduling.
+#### 🎓 Campus Connect — College Placement Cell Platform *(Jun 2026)*
+*Role: Lead Full Stack Developer* | `React · TypeScript · Node.js · Express · Supabase · Socket.IO`
+- **Overview:** Premium, enterprise-grade placement management platform designed to automate TPO workflows and facilitate seamless recruiter engagement.
+- **Impact:** Streamlined placement workflows for 500+ students, reducing manual data entry by 80% and decreasing interview scheduling conflicts to zero.
+- **Key Learnings:** Mastered WebSocket integration for real-time state synchronization and gained deep insights into secure document handling and RBAC using Supabase.
 
-- 💬 **Techy Tharun's Chatbox | AI Assistant** *(Feb – Apr 2026)* — [🔴 Live](https://tharunchatbox.onrender.com)
-  `Next.js 15 · TypeScript · Prisma · Neon PostgreSQL · GPT-4o`
-  Production-grade AI chatbox powered by GPT-4o with multi-modal capabilities (document parsing, voice input, markdown). Optimized for <2s avg latency with 99.5% uptime.
+#### 💬 Techy Tharun's Chatbox — AI Assistant *(Feb 2026 - Apr 2026)*
+*Role: AI Engineer & Frontend Architect* | `Next.js 15 · TypeScript · Prisma · Neon PostgreSQL · GPT-4o`
+- **Overview:** A high-performance, premium AI assistant powered by GPT-4o featuring a sleek, humanized interface optimized for extreme speed.
+- **Impact:** Achieved sub-200ms latency on AI streaming responses and created a seamless UX that mimics human-like interaction.
+- **Key Learnings:** Deeply understood the complexities of handling Server-Sent Events (SSE) for AI streaming and optimizing Next.js App Router for extreme performance.
 
-- 🪖 **Smart Helmet IoT Safety System** *(Sep – Oct 2025)*
-  `Arduino · C · RF 433MHz · RadioHead · I2C`
-  Intelligent IoT helmet detecting helmet wear, alcohol levels (MQ-3 sensor) & drowsiness via eye blink detection. RF communication with automatic ignition cut-off. **SIH 2025 Top 50** nationally.
+#### 🧠 Aura — AI Unified Retrieval Assistant *(2026)*
+*Role: Core Systems Developer* | `React · Spring Boot · Java · SQLite · ChromaDB · Ollama · Electron`
+- **Overview:** 100% Offline Multimodal Retrieval-Augmented Generation (RAG) System developed for resource-constrained, air-gapped environments.
+- **Impact:** Enabled privacy-preserving document and vision querying, making it suitable for secure enterprise and military deployment.
+- **Key Learnings:** Orchestrated local LLMs and vector databases within an Electron shell and optimized Java Spring Boot for local low-memory environments.
+
+#### 🪖 Smart Helmet IoT Safety System *(Sep 2025 - Oct 2025)*
+*Role: IoT & Embedded Systems Engineer* | `Arduino · C · RF 433MHz · IoT`
+- **Overview:** Intelligent IoT helmet system monitoring helmet wear, alcohol levels, and drowsiness — disabling bike ignition via RF communication.
+- **Impact:** Developed a prototype reacting in under 500ms to dangerous rider states, potentially preventing life-threatening accidents.
+- **Key Learnings:** Navigated hardware constraints to establish reliable RF communication and improved sensor calibration techniques for real-world environmental noise.
 
 ---
 
@@ -125,12 +123,31 @@
 
 ---
 
-### 📜 Certifications
+### 📜 Certifications & Badges
 
-![TCS](https://img.shields.io/badge/TCS_iON_Career_Edge-Young_Professional_2025-blue?style=flat-square)
-![Salesforce](https://img.shields.io/badge/Salesforce-Administrator_Explorer_2025-00A1E0?style=flat-square&logo=salesforce&logoColor=white)
-![Python](https://img.shields.io/badge/Python_Foundation-2024-3776AB?style=flat-square&logo=python&logoColor=white)
-![IoT](https://img.shields.io/badge/Intro_to_IoT_&_Digital_Transformation-00979D?style=flat-square&logo=arduino&logoColor=white)
+- **Infosys Internship Completion Certificate** (Infosys Springboard, 2024)
+- **Tata - GenAI Powered Data Analytics Job Simulation** (Forage, 2025)
+- **Dynamic Programming Camp Participation Certificate** (AlgoUniversity, 2026)
+- **TCS iON Career Edge — Young Professional** (TCS iON, 2025)
+- **Responsible AI: Applying AI Principles with Google Cloud** (Google Cloud, 2025)
+- **Prompt Design in Agent Platform** (Google, 2025)
+- **Introduction to Large Language Models** (Google, 2025)
+- **Introduction to IoT** (Cisco, 2025)
+- **Salesforce Administrator Explorer** (Trailhead by Salesforce, 2025)
+
+---
+
+### 💻 Running the Portfolio Locally
+
+This repository contains the source code for my interactive portfolio, built with React, Vite, Tailwind CSS, and Framer Motion. 
+
+To run the development server locally:
+1. Clone the repository
+2. Run the `run.bat` file OR manually run:
+```bash
+npm install
+npm run dev
+```
 
 ---
 ### 📊 GitHub Stats
